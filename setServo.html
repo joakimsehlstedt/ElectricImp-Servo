@@ -1,0 +1,31 @@
+<html>
+<head>
+</head>
+
+<body onLoad=updateURL()>
+
+<h4>What is your agent's url?</h4>
+<form name="url">
+https://agent.electricimp.com/<input type="text" name="agentUrl" onChange=updateURL()>
+</form>
+
+<h4>Imp Inputs:</h4>
+<form name="servo" id="controlServo" method="get">
+Set servo to value between 0 and 1.<br>
+<input type="text" name="setServo" value="0">
+<input type="submit" value="Update!">
+</form>
+
+</body>
+
+<script language="javascript">
+
+ function updateURL() {
+    ledForm = document.servo;
+    urlForm = document.url;
+    ledForm.action = "https://agent.electricimp.com/" + urlForm.agentUrl.value;
+}
+
+</script>
+
+</html>
